@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "ap-south-1"
+  default = "us-east-1"
 }
 
 variable "prefix" {
@@ -12,7 +12,7 @@ variable "project" {
 }
 
 variable "contact" {
-  default = "akhileshmishra@gmail.com"
+  default = "ankitpateriya6742gmail.com"
 }
 
 variable "vpc_cidr" {
