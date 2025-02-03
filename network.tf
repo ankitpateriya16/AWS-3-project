@@ -13,7 +13,7 @@ resource "aws_subnet" "public" {
   cidr_block              = var.subnet_cidr_list[0]
   map_public_ip_on_launch = true # only for public subnet
   vpc_id                  = aws_vpc.main.id
-  availability_zone       = "[${data.aws_region.current.name}a, ${data.aws_region.current.name}b"
+  availability_zone       = "${data.aws_region.current.name}a"
 
   tags = merge(
     local.common_tags,
@@ -24,7 +24,7 @@ resource "aws_subnet" "public" {
 resource "aws_subnet" "private" {
   cidr_block        = var.subnet_cidr_list[1]
   vpc_id            = aws_vpc.main.id
-  availability_zone = "${data.aws_region.current.name}a"
+  availability_zone = "${data.aws_region.current.name}b"
 
   tags = merge(
     local.common_tags,
